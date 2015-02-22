@@ -17,10 +17,10 @@ gprs.on('ready', function() {
 	var initialize = chain(commands)
 		.retry(commands.checkGprsState, 10, 2000)
 		.setBearerSetting('CONTYPE', 'GPRS')
-		.setBearerSetting('APN', 'internet')
+		.setBearerSetting('APN', 'internet.ideasclaro.com.do')
 		.openBearer()
 		.initializeHttpService()
-		.setHttpParameter('URL', 'http://something.herokuapp.com/events')
+		.setHttpParameter('URL', 'http://iot-gpstracker.herokuapp.com/events')
 		.setHttpParameter('CONTENT', 'application/json')
 		.setHttpParameter('TIMEOUT', '30')
 		.end(function(err) {
